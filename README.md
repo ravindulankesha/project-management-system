@@ -15,5 +15,7 @@ DB_PASSWORD=
 4.open a terminal in the project root directory and enter 
 php artisan key:generate
 
-5.Finally Enter this in terminal
+5.create a new mysql DB named customer_projects and enter php artisan migrate in terminal
+
+6.Finally Enter this in terminal
 php artisan serve
