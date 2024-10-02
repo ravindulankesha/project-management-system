@@ -6,7 +6,7 @@
     <title>Create Customer</title>
 </head>
 <body>
-
+    <a href="{{route('customers.index')}}">Back</a>
     <h1>Create Customer</h1>
 
     <form action="{{ route('customers.store') }}" method="POST">

@@ -6,8 +6,10 @@
     <title>Homepage</title>
 </head>
 <body>
-    <a href="{{route('login')}}">Login</a>
-    <a href="{{route('register')}}">Register</a>
+<ul>
+    <li><a href="{{ route('projects.index') }}">View Projects</a></li>
+    <li><a href="{{ route('customers.index') }}">View Customers</a></li>
+</ul>
 </body>
 
 </html>

@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 </head>
 <body>
-
+    <a href="{{route('projects.index')}}">Back</a>
     <h1>Create Project</h1>
 
     <form action="{{ route('projects.store') }}" method="POST">
@@ -31,6 +34,17 @@
         <h2>Link Customers to Project</h2>
 
         <div>
+            <label for="customers">Select Customers:</label>
+            <select name="customers[]" id="customers" class="form-control" multiple="multiple">
+                @foreach ($customers as $customer)
+                    <option value="{{ $customer->id }}">{{ $customer->name }} ({{ $customer->email }})</option>
+                @endforeach
+            </select>
+            @error('customers')
+                <div>{{ $message }}</div>
+            @enderror
+        </div>
+        <!-- <div>
             @foreach ($customers as $customer)
                 <div>
                     <label for="customer_{{ $customer->id }}">
@@ -42,12 +56,21 @@
             @error('customers')
                 <div>{{ $message }}</div>
             @enderror
-        </div>
+        </div> -->
 
         <div>
             <button type="submit">Create Project</button>
         </div>
     </form>
 
+    <script>
+        $(document).ready(function() {
+            $('#customers').select2({
+                placeholder: 'Select customers',
+                allowClear: true
+            });
+        });
+    </script>
 </body>
+
 </html>
