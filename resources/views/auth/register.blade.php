@@ -6,7 +6,7 @@
     <title>Register</title>
 </head>
 <body>
-
+    <a href="{{route('homePage')}}">Back</a>
     <h1>Register</h1>
 
     <form action="{{ url('/register') }}" method="POST">

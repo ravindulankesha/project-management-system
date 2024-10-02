@@ -6,6 +6,7 @@
     <title>Login</title>
 </head>
 <body>
+    <a href="{{route('homePage')}}">Back</a>
 
     <h1>Login</h1>
 
