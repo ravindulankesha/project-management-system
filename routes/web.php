@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('homepage');
-});
+})->name(name: 'homePage');
 
 Route::middleware('auth')->get('/landingPage', function () {
     return view('landingPage');
